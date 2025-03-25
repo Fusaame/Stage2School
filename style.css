@@ -1,0 +1,91 @@
+/* Navbar inchangée mais modernisée */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #383838; /* Garde la couleur actuelle */
+    padding: 15px 30px; /* Plus d'espace autour des éléments */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Ombre plus douce */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 70px; /* Taille de logo inchangée */
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 20px; /* Espacement entre les boutons */
+    padding-right: 35px;
+}
+
+button {
+    background-color: #0056b3; /* Couleur inchangée */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 18px; /* Boutons plus grands */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Effet au survol */
+}
+
+button:hover {
+    background-color: #003d7a; /* Couleur inchangée */
+    transform: scale(1.05); /* Effet de zoom au survol */
+}
+
+/* Section principale avec fond clair et renforcement de la couleur de fond */
+#test {
+    text-align: center;
+    padding: 5rem 20px; /* Espacement plus grand */
+    margin-top: 100px; /* Evite que le contenu soit caché par la navbar */
+    background-color: white !important; /* Renforcement de la couleur de fond */
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Ombre douce */
+}
+
+/* Texte principal */
+h1 {
+    color: #007BFF;
+    font-size: 3rem; /* Taille plus grande pour le titre */
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+h2 {
+    color: #0056b3;
+    font-size: 1.8rem; /* Taille agrandie */
+    margin-top: 20px;
+    font-weight: normal;
+    letter-spacing: 1px; /* Espacement des lettres pour un look moderne */
+}
+
+/* Éviter que les éléments soient trop serrés */
+p {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #ffffff;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Espacement et structure des autres éléments */
+.first {
+    padding-top: 40px;
+    background-color: white;
+    border-radius: 8px;
+}

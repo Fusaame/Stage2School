@@ -1,0 +1,62 @@
+/* Style général pour le corps */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0; /* Supprime les espaces par défaut */
+    padding-top: 150px; /* Ajoute un espace pour éloigner du haut (ajuster si nécessaire) */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Style du conteneur principal */
+.compte-rendu-container {
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+    margin-bottom: 30px;
+    margin-top: 20px; /* Espace entre la navbar et le conteneur */
+}
+
+/* Titre */
+h1 {
+    color: #007BFF;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Paragraphe général */
+p {
+    margin: 10px 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Texte en gras */
+p strong {
+    color: #007BFF;
+}
+
+/* Lien de retour */
+.back-link {
+    display: inline-block;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 15px;
+    color: white;
+    background-color: #007BFF;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.back-link:hover {
+    background-color: #0056b3;
+}
