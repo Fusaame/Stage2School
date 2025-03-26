@@ -54,6 +54,8 @@ $result = $stmt->get_result(); // Récupère le résultat
         }
         .note-non {
             background-color: black;
+            text-align: center;
+            color: white;
         }
     </style>
 </head>
@@ -113,7 +115,7 @@ $result = $stmt->get_result(); // Récupère le résultat
                         }
                         ?>
                         <td class="<?php echo $noteClass; ?>">
-                            <?php echo htmlspecialchars($crProf['note']); ?>
+                        <?php echo $crProf['note'] !== null ? htmlspecialchars($crProf['note']) : 'Non notée'; ?>
                         </td>
                         <td><?php echo $varVu; ?></td>
                         <td>
