@@ -5,6 +5,8 @@ session_start();
 include 'navbarProf.php';
 
 $nameProf = $_SESSION['login'];
+$theme = isset($_SESSION['theme']) ? $_SESSION['theme'] : 'light';
+
 ?>
 
 <!DOCTYPE html>

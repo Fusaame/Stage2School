@@ -1,16 +1,20 @@
-/* Style de la navbar */
-
-
 /* Style général pour le corps */
 body {
     font-family: Arial, sans-serif;
     background-color: #ffffff;
     margin: 0;
     padding-top: 100px;
-    height: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode pour body */
+body.dark {
+    background-color: #121212;
+    color: #7A7A7A; /* Texte en gris #7A7A7A */
 }
 
 /* Style du titre */
@@ -19,15 +23,21 @@ h1 {
     text-align: center;
     margin: 20px 0;
     padding-top: 30px;
+    transition: color 0.3s ease;
+}
+
+/* Dark mode pour h1 */
+body.dark h1 {
+    color: #7A7A7A;
 }
 
 /* Style pour la table des comptes rendus */
 .compte-rendu-table {
     width: 90%;
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 0 auto 30px auto;
     border-collapse: collapse;
-    margin-bottom: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Style pour les en-têtes de colonne */
@@ -37,6 +47,12 @@ th {
     padding: 12px;
     text-align: left;
     border-bottom: 2px solid #0056b3;
+    transition: background-color 0.3s ease;
+}
+
+/* Dark mode pour th */
+body.dark th {
+    background-color: #004080;
 }
 
 /* Style pour les cellules */
@@ -44,21 +60,47 @@ td {
     padding: 15px;
     text-align: left;
     border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode pour td */
+body.dark td {
+    border-bottom: 1px solid #444;
+    color: #7A7A7A; /* Texte en gris #7A7A7A */
 }
 
 /* Ligne de sujet */
 .subject {
     background-color: #007BFF;
     color: white;
+    transition: background-color 0.3s ease;
+}
+
+/* Dark mode pour .subject */
+body.dark .subject {
+    background-color: #004080;
 }
 
 /* Ligne de résultat */
 .result {
     background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
 }
 
+/* Dark mode pour .result */
+body.dark .result {
+    background-color: #1e1e1e;
+}
+
+/* Hover sur les lignes */
 .compte-rendu-table tr:hover {
     background-color: #e8f4ff;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover en mode sombre */
+body.dark .compte-rendu-table tr:hover {
+    background-color: #333a55;
 }
 
 /* Message quand il n'y a pas de résultats */
@@ -67,6 +109,12 @@ td {
     color: #999;
     font-size: 1.2rem;
     padding: 20px;
+    transition: color 0.3s ease;
+}
+
+/* Dark mode pour .no-result */
+body.dark .no-result {
+    color: #7A7A7A; /* Texte en gris #7A7A7A */
 }
 
 /* Boutons d'action */
@@ -77,23 +125,22 @@ button {
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
     margin-top: 10px;
 }
 
-button {
-    padding: 10px 15px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 10px;
+/* Dark mode pour les boutons */
+body.dark button {
+    background-color: #004080;
+    color: #7A7A7A; /* Texte en gris #7A7A7A */
 }
 
 button:hover {
     background-color: #0056b3;
+}
+
+body.dark button:hover {
+    background-color: #002855;
 }
 
 /* Formulaire d'édition */
@@ -105,12 +152,20 @@ tr[id^="edit-form-"] {
     border-radius: 12px;
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
     z-index: 1500;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+/* Dark mode pour formulaire */
+body.dark tr[id^="edit-form-"] {
+    background-color: #2a2a2a;
+    color: #7A7A7A; /* Texte en gris #7A7A7A */
+}
+
 tr[id^="edit-form-"].open {
     display: table-row;
 }
 
-/* formulaire après avoir appuyé sur modifier */
+/* textarea dans le formulaire */
 textarea {
     width: 90%;
     min-height: 100px;
@@ -118,4 +173,12 @@ textarea {
     margin-top: 10px;
     border-radius: 8px;
     border: 1px solid #ccc;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Dark mode pour textarea */
+body.dark textarea {
+    background-color: #1e1e1e;
+    color: #7A7A7A; /* Texte en gris #7A7A7A */
+    border: 1px solid #555;
 }

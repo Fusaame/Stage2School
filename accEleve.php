@@ -3,6 +3,8 @@
 session_start();
 
 $nameEleve = $_SESSION['login'];
+$theme = isset($_SESSION['theme']) ? $_SESSION['theme'] : 'light';
+
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +15,20 @@ $nameEleve = $_SESSION['login'];
     <title>Accueil Élève</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body name="main" id="main">
+<style>
+body.light {
+    background-color: white;
+    color: black;
+}
+
+body.dark {
+    background-color: #121212 !important;
+    color: #f5f5f5 !important;
+}
+</style>
+
+<body class="<?= $theme ?>">
+
     <div class="first">
         <!-- Navbar -->
         <nav class="navbar">
@@ -37,6 +52,7 @@ $nameEleve = $_SESSION['login'];
             <button onclick="window.location.href='create_cr.php'">Créer un Compte Rendu</button>
             <button onclick="window.location.href='information.php'">Mes informations</button>
             <button onclick="window.location.href='logout.php'">Déconnexion</button>
+            <?php echo $theme; ?>
         </div>
     </div>
     

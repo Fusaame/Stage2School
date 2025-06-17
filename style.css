@@ -1,91 +1,163 @@
-/* Navbar inchangée mais modernisée */
+/* Thème clair par défaut */
+body.light {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.light .first {
+    background-color: #ffffff;
+    color: #000000;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light #test {
+    background-color: #ffffff;
+    color: #333333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Thème sombre */
+body.dark {
+    background-color: #121212;
+    color: #7A7A7A; /* gris souhaité */
+}
+
+body.dark .first {
+    background-color: #1e1e1e;
+    color: #7A7A7A;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark #test {
+    background-color: #1e1e1e;
+    color: #7A7A7A;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    background-color: #383838; /* Garde la couleur actuelle */
-    padding: 15px 30px; /* Plus d'espace autour des éléments */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Ombre plus douce */
+    padding: 15px 30px;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 10;
+    background-color: #383838; /* thème clair par défaut */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease;
 }
 
-.logo-container {
-    display: flex;
-    align-items: center;
+body.light .navbar {
+    background-color: #383838;
 }
 
+body.dark .navbar {
+    background-color: #222222;
+}
+
+/* Logo */
 .logo {
-    height: 70px; /* Taille de logo inchangée */
+    height: 70px;
 }
 
-.nav-buttons {
-    display: flex;
-    gap: 20px; /* Espacement entre les boutons */
-    padding-right: 35px;
-}
-
+/* Boutons */
 button {
-    background-color: #0056b3; /* Couleur inchangée */
+    background-color: #0056b3;
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 12px 18px; /* Boutons plus grands */
+    padding: 12px 18px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Effet au survol */
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
 }
 
 button:hover {
-    background-color: #003d7a; /* Couleur inchangée */
-    transform: scale(1.05); /* Effet de zoom au survol */
+    background-color: #003d7a;
+    transform: scale(1.05);
 }
 
-/* Section principale avec fond clair et renforcement de la couleur de fond */
+/* Boutons en mode sombre */
+body.dark button {
+    background-color: #004080;
+    color: #7A7A7A;
+}
+
+body.dark button:hover {
+    background-color: #002855;
+    color: #ffffff;
+}
+
+/* Texte dans #test */
 #test {
     text-align: center;
-    padding: 5rem 20px; /* Espacement plus grand */
-    margin-top: 100px; /* Evite que le contenu soit caché par la navbar */
-    background-color: white !important; /* Renforcement de la couleur de fond */
+    padding: 5rem 20px;
+    margin-top: 100px; /* pour que le contenu ne soit pas sous la navbar */
+    background-color: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Texte principal */
+body.dark #test {
+    background-color: #1e1e1e;
+}
+
+/* Titres */
 h1 {
     color: #007BFF;
-    font-size: 3rem; /* Taille plus grande pour le titre */
+    font-size: 3rem;
     font-weight: bold;
     margin-bottom: 20px;
     text-transform: uppercase;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    transition: color 0.3s ease;
+}
+
+body.dark h1 {
+    color: #7A7A7A;
 }
 
 h2 {
     color: #0056b3;
-    font-size: 1.8rem; /* Taille agrandie */
+    font-size: 1.8rem;
     margin-top: 20px;
     font-weight: normal;
-    letter-spacing: 1px; /* Espacement des lettres pour un look moderne */
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
 }
 
-/* Éviter que les éléments soient trop serrés */
+body.dark h2 {
+    color: #7A7A7A;
+}
+
+/* Paragraphes */
 p {
     margin-top: 20px;
     font-size: 1.1rem;
-    color: #ffffff;
+    color: #333333;
     line-height: 1.6;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    transition: color 0.3s ease;
 }
 
-/* Espacement et structure des autres éléments */
+body.dark p {
+    color: #7A7A7A;
+}
+
+/* Container global .first */
 .first {
     padding-top: 40px;
-    background-color: white;
+    background-color: #ffffff;
     border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+body.dark .first {
+    background-color: #1e1e1e;
 }

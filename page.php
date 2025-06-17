@@ -29,17 +29,41 @@ if (mysqli_num_rows($result) == 0 && password_verify($varmdp, $hashedPass)) {
 } else {
     $user = mysqli_fetch_assoc($result);
     $id_statut = $user['id_statut'];
+    $id_mode = $user['id_mode'];
+    $lock = $user['lock']; 
     //echo "mdp : $hashedPass, login : $varlogin, and : $varmdp";
+    
+    
+    //echo id_mode;
+    
+    
+    
+    // Gestion du thème basé sur id_mode
+
+
+    if ($id_mode == 2) {
+        $_SESSION['theme'] = 'dark';
+    } else {
+        $_SESSION['theme'] = 'light'; // par défaut
+    }
+
+
+
     $_SESSION['login'] = $varlogin;
     echo $id_statut;
+    if ($lock == 0){
         // Rediriger selon le statut de l'utilisateur
         if ($id_statut == 1) {
             header('location: accEleve.php');
         } elseif ($id_statut == 2) {
-            header('location: accProf.php');
+            header('location: accProf.php');   
         } else {
             echo "Erreur : vous n'avez pas de statut valide.";
         }
         exit;
+    } else {
+        echo "Votre compte a été bloqué, veuillez contacter l'administrateur.";
+    }
+        
 }
 ?>
